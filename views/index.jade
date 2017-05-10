@@ -4,8 +4,9 @@ block content
   
   include templates/nav
   
-  h1= title
-  p Welcome to #{title}
-  p yeahhhh
-  div(class='container' id='div1')='heloooooooooooo'
+  div(class=['ui','container','grid','stackable'])
+    div(class=['ten','wide', 'column'])
+        h3(class=['ui', 'header', 'blue'])='Bienvenidos al crud de nodejs'
+  
+  
   
