@@ -15,8 +15,12 @@ module.exports={
           db.end();//cierra la conexion por el error;
           res.render('productos/productos',{productos:productos});
       });
+    },//hay que separar por , las funciones
+    getNuevoProducto: function(req, res, next){
+      res.render('productos/nuevo');
 
-
-
+    },
+    getInicio: function(req, res, next){
+      res.render('index');
     }
 }

@@ -1,0 +1,23 @@
+extends ../default
+
+block content
+  
+  include ../templates/nav
+  
+  div(class=['ui','container','grid','stackable'])
+    div(class=['ten','wide', 'column'])
+        h3(class=['ui', 'header', 'blue','dividing'])='Crear Productos'
+        
+        div(class='form-nuevoProducto')
+          form(class=['ui', 'form'] action="" method="post")
+            div(class=['ui', 'filed' ])
+              label(for='nombre')='Nombre del producto'
+              input(type='text' name='nombre')
+            div(class=['ui', 'two', 'fields' ])
+              div(class=['ui', 'filed' ])
+                label(for='nombre')='Precio'
+                input(type='text' name='nombre')  
+              div(class=['ui', 'filed' ])
+                label(for='nombre')='fecha'
+                input(type='text' name='nombre')  
+              
