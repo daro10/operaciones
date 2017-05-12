@@ -9,15 +9,19 @@ block content
       h2(class=['ui', 'header', 'blue', 'dividing', 'blue'])='Crear Productos'
       
       div(class='form-nuevoproducto')
-        form(class=['ui', 'form']  method="post", action="")
+        form(class=['ui', 'form']  method="post", action="http://localhost:3000/crearproducto")
           div(class='field')
             labe(for='nombre')='Nombre del producto'
-            input(type="text", placeholder="Nombre Producto")
-          div(class=['ui', 'two', 'fields'])
-              div(class="field")
+            input(type="text", name='nombre' placeholder="Nombre Producto")
+          div(class=['ui', 'three', 'fields'])
+              div(class=['ui','field'])
                   label(for='Precio')='Precio'
-                  input(type="text", placeholder="Precio")
-              div(class="field")       
-                  label(for='Fecha')='Fecha'
-                  input(type="date", placeholder="Fecha") 
-              div(class="field")           
+                  input(type="text", name='precio' placeholder="Precio")
+              div(class=['ui','field'])       
+                  label(for='stock')='stock'
+                  input(type="text", name='stock' placeholder="stock")       
+              div(class="field")
+          button(class=['ui','button','basic','black'])='Crear Producto'
+          div(class=['ui','message','error'])
+                           
+  script(src="/javascripts/validacion.js")

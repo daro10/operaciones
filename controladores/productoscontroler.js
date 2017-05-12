@@ -13,14 +13,22 @@ module.exports={
         if(error) throw error;
           productos=rows;
           db.end();//cierra la conexion por el error;
+          //mostrar la vista de nuevos productos
           res.render('productos/productos',{productos:productos});
       });
     },//hay que separar por , las funciones
+
+    //mostrar la vista del nuevo producto
     getNuevoProducto: function(req, res, next){
       res.render('productos/nuevo');
 
     },
     getInicio: function(req, res, next){
       res.render('index');
+    },
+    //CAPTURAR DATOS DEL NUEVO PRODUCTO
+    postNuevoProducto:function(req, res, next)
+    {
+      console.log(req.body)
     }
 }

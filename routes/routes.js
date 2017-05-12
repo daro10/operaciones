@@ -7,9 +7,11 @@ var controladores=require('.././controladores');
 router.get('/', controladores.homecontroladores.index);
 //ruta de listar productos
 router.get('/productos', controladores.productoscontroler.getProductos);
-//ruta para crear productos
+//ruta para ir al formulario crear productos
 router.get('/nuevo', controladores.productoscontroler.getNuevoProducto);
 //ruta para ir al Inicio
 router.get('/inicio', controladores.productoscontroler.getInicio);
+//creando un producto nuevo
+router.post('/crearproducto', controladores.productoscontroler.postNuevoProducto);
 
 module.exports = router;
