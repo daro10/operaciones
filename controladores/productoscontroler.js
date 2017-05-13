@@ -30,5 +30,10 @@ module.exports={
     postNuevoProducto:function(req, res, next)
     {
       console.log(req.body)
-    }
+    },
+    //MOSTRANDO DATOS CAPTURADOS EN LA VISTA
+
+    getCalcular: function(req, res, next){
+      res.render('productos/calcular');
+    }  
 }

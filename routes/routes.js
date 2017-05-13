@@ -13,5 +13,7 @@ router.get('/nuevo', controladores.productoscontroler.getNuevoProducto);
 router.get('/inicio', controladores.productoscontroler.getInicio);
 //creando un producto nuevo
 router.post('/crearproducto', controladores.productoscontroler.postNuevoProducto);
+//creando ruta para calcular
+router.get('/calcular', controladores.productoscontroler.getCalcular);
 
 module.exports = router;
