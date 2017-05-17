@@ -1,4 +1,5 @@
 var mysql=require('mysql');
+var dateFormat=require('dateformat');
 
 module.exports={
   getProductos: function(req,res,next){
@@ -29,11 +30,31 @@ module.exports={
     //CAPTURAR DATOS DEL NUEVO PRODUCTO
     postNuevoProducto:function(req, res, next)
     {
-      console.log(req.body)
+        var fechaActual= new Date();
+        var fecha=dateFormat(fechaActual, 'yyyy-mm-dd h MM:ss');
+
+        var producto=
+          {
+            nombre:req.body.nombre,
+            precio:req.body.precio,
+            fecha_creacion:fecha,
+            stock:req.body.stock
+
+          }
+      console.log(producto);
     },
+
+
+
+
+
+
+
+
+
     //MOSTRANDO DATOS CAPTURADOS EN LA VISTA
 
     getCalcular: function(req, res, next){
       res.render('productos/calcular');
-    }  
+    }
 }
