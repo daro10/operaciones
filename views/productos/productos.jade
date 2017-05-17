@@ -5,10 +5,10 @@ block content
   include ../templates/nav
   
   div(class=['ui','container','grid','stackable'])
-    div(class=['ten','wide', 'column'])
+    div(class=['sixteen','wide', 'column'])
         h3(class=['ui', 'header', 'blue','dividing'])='Listado de productos'
   
-        table(class=['ui', 'table', 'celled'] id='tbl')
+        table(class=['ui', 'table', 'celled'] id='tbl', border='1')
           thead
               tr
                 th='ID'
@@ -25,4 +25,8 @@ block content
                   td=producto.precio
                   td=producto.fecha_creacion
                   td=producto.stock
-                  td='Eliminar, Modificar'
+                  td
+                    //sjdasjdajskndjksandkjsajdnskj
+                    a(class=['ui','button', 'icon'] href='#' data-tooltip='Eliminar' data-position='top center'
+                                                    data-inverted)
+                      i(class=['trash', 'icon'])
