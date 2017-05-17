@@ -31,7 +31,7 @@ module.exports={
     postNuevoProducto:function(req, res, next)
     {
         var fechaActual= new Date();
-        var fecha=dateFormat(fechaActual, 'yyyy-mm-dd h MM:ss');
+        var fecha=dateFormat(fechaActual, 'yyyy-mm-dd h:MM:ss');
 
         var producto=
           {
@@ -41,16 +41,22 @@ module.exports={
             stock:req.body.stock
 
           }
-      console.log(producto);
-    },
+          var config=require('.././database/config');
 
+          var db=mysql.createConnection(config);//inicio la conexion
+          db.connect();
 
+          db.query('INSERT INTO productos SET ?', producto, function(err, rows, fields)
+          {
+            if(err){
+              console.log('error en la conexion')
+            };
+            db.end();
+          });
+          res.render('productos/nuevo', {info : 'Producto creado'});
 
-
-
-
-
-
+      //console.log(producto);
+     },
 
     //MOSTRANDO DATOS CAPTURADOS EN LA VISTA
 
