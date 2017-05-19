@@ -61,6 +61,41 @@ module.exports={
     //MOSTRANDO DATOS CAPTURADOS EN LA VISTA
 
     getCalcular: function(req, res, next){
-      res.render('productos/calcular');
+      res.render('productosproductos/calcular');
+    },
+    //ELIMINANDO PRODUCTOS
+
+    EliminarProducto: function(req, res, next)
+    {
+      var id=req.body.id;
+
+      var config=require('.././database/config');
+
+      var db=mysql.createConnection(config);//inicio la conexion
+      db.connect();
+      var respuesta=false;
+      db.query('DELETE FROM productos WHERE id_producto ?', id , function(err, rows, fields)
+      {
+        if(err)
+        {
+          console.log('ocurrio un error');
+        }else{
+          respuesta=true;
+          db.end();
+          res.json(respuesta);
+        }
+      });
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }

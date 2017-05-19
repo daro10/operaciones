@@ -8,7 +8,7 @@ block content
     div(class=['sixteen','wide', 'column'])
         h3(class=['ui', 'header', 'blue','dividing'])='Listado de productos'
   
-        table(class=['ui', 'table', 'celled'] id='tbl', border='1')
+        table(class=['ui', 'table', 'celled'] id='tbl-id', border='1')
           thead
               tr
                 th='ID'
@@ -27,6 +27,8 @@ block content
                   td=producto.stock
                   td
                     
-                    a(class=['ui','button', 'icon'] href='#' data-tooltip='Eliminar' data-position='top center'
+                    a(class=['ui','button', 'icon'] href='#' data-tooltip='Eliminar' id='btn-eliminar' data-position='top center'
                                                     data-inverted)
                       i(class=['trash', 'icon'])
+  
+  script(src='/javascripts/productos.js')
