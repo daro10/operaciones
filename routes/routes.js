@@ -16,6 +16,8 @@ router.post('/crearproducto', controladores.productoscontroler.postNuevoProducto
 //creando ruta para calcular
 router.get('/calcular', controladores.productoscontroler.getCalcular);
 //eliminando producto
-router.post('/eliminar', controladores.productoscontroler.EliminarProducto);
+router.post('/eliminarproducto', controladores.productoscontroler.EliminarProducto);
+//buscar por codigo
+
 
 module.exports = router;

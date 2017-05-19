@@ -61,7 +61,7 @@ module.exports={
     //MOSTRANDO DATOS CAPTURADOS EN LA VISTA
 
     getCalcular: function(req, res, next){
-      res.render('productosproductos/calcular');
+      res.render('productos/calcular');
     },
     //ELIMINANDO PRODUCTOS
 
@@ -73,20 +73,16 @@ module.exports={
 
       var db=mysql.createConnection(config);//inicio la conexion
       db.connect();
-      var respuesta=false;
-      db.query('DELETE FROM productos WHERE id_producto ?', id , function(err, rows, fields)
+      var respuesta={res:false};
+      db.query('DELETE FROM productos WHERE id_producto = ?', id , function(err, rows, fields)
       {
-        if(err)
-        {
-          console.log('ocurrio un error');
-        }else{
-          respuesta=true;
-          db.end();
-          res.json(respuesta);
-        }
+        if(err) throw err;
+        db.end();
+        respuesta.res=true;
+
+        res.json(respuesta);
       });
     }
-
 
 
 
