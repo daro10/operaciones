@@ -82,9 +82,8 @@ module.exports={
 
         res.json(respuesta);
       });
-    }
-
-
+    },
+    //MODIFICAR PRODUCTO
 
 
 
